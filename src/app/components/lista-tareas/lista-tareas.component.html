@@ -1,0 +1,10 @@
+<div>
+    <h2>Lista de Tareas</h2>
+    <input type="text" [(ngModel)]="nuevaTarea" placeholder="Ingresar tarea">
+    <button (click)="agregarTarea()">Add</button>
+    <ul>
+        @for (item of listaTareas; track $index) {
+            <li>{{item}} <button (click)="eliminarTarea($index)">X</button></li>
+        }
+    </ul>
+</div>
