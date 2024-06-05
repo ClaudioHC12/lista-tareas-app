@@ -1,2 +1,22 @@
-
+<nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLink="lista-tareas">
+            <img src="favicon.ico" alt="Bootstrap" width="25" height="25">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" routerLink="" [ngClass]="{active:(menuSelect=='home')}"
+                    (click)="onOption('home')">Home</a>
+                <a class="nav-link" routerLink="products" [ngClass]="{'active':(menuSelect=='products')}"
+                    (click)="onOption('products')">Products</a>
+                <a class="nav-link" routerLink="contact" [ngClass]="{'active':(menuSelect=='contact')}"
+                    (click)="onOption('contact')">Contact</a>
+            </div>
+        </div>
+    </div>
+</nav>
 <router-outlet></router-outlet>

@@ -1,0 +1,21 @@
+@if (loading) {
+<div id="loading-screen" class="loading-screen">
+    <div class="spinner-border text-primary" role="status">
+    </div>
+</div>
+}@else{
+<div class="body-page">
+    <div class="container pt-3">
+        <div class="card text-bg-dark mb-3" style="width: 18rem;">
+            <img [src]="producto?.image" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{producto?.id}}-.{{producto?.title}}</h5>
+                <p class="card-text">Price: {{producto?.price | currency }}</p>
+                <p class="card-text">Category: {{producto?.category}}</p>
+                <p class="card-text">Description: {{producto?.description}}</p>
+                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+    </div>
+</div>
+}

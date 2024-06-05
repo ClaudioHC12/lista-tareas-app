@@ -1,0 +1,31 @@
+<div class="body-page">
+    <div class="container pt-3">
+        <h2 class="text-center pb-2">List Products</h2>
+        <div class="table-responsive">
+            <table class="table table-dark table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Details</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    @for (item of productos; track $index) {
+                    <tr>
+                        <th scope="row">{{item.id}}</th>
+                        <td>{{item.title}}</td>
+                        <td>{{item.price  | currency}}</td>
+                        <td>{{item.description}}</td>
+                        <td>
+                            <button class="btn btn-outline-warning" (click)="navigate(item.id)">✅</button>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

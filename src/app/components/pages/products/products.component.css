@@ -1,0 +1,13 @@
+.body-page{
+    color: aliceblue;
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.container{
+    /*
+    display: grid;
+    justify-items: center;
+    */
+}

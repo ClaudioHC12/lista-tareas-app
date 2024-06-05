@@ -1,0 +1,33 @@
+<div class="body-page">
+    <div class="container pt-5">
+        <form [formGroup]="contactForm" class="row g-3 needs-validation" validate (submit)="enviar($event)">
+            <div class="mb-3 ">
+                <label for="email" class="form-label">Email address</label>
+                <input data-bs-theme="dark" type="email" class="form-control" id="email" placeholder="name@example.com"
+                    formControlName="email"
+                    [ngClass]="{'is-invalid':hasErrors('email', 'email') || hasErrors('email', 'required'), 
+                        'is-valid':!(hasErrors('email', 'email') || hasErrors('email', 'required')) && isTouched('email')}">
+                @if (hasErrors('email', 'required')) {
+                <span class="text-danger">Complete the field</span>
+                }
+                @if (hasErrors('email', 'email')) {
+                <span class="text-danger">Invalid email format</span>
+                }
+            </div>
+            <div class="mb-3 ">
+                <label for="message" class="form-label">Message</label>
+                <textarea data-bs-theme="dark" class="form-control" id="message" rows="3" formControlName="message"
+                    [ngClass]="{'is-invalid':hasErrors('message', 'required') || hasErrors('message', 'minlength')}"></textarea>
+                @if (hasErrors('message', 'required')) {
+                <span class="text-danger">Complete the field</span>
+                }
+                @if (hasErrors('message', 'minlength')) {
+                <span class="text-danger">Enter min length 3</span>
+                }
+            </div>
+            <div class="mb-3  text-end">
+                <button type="submit" class="btn btn-success" [disabled]="contactForm.invalid">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
